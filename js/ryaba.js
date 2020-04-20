@@ -1,12 +1,7 @@
 const dataURL = "https://api.jsonbin.io/b/5e905926172eb643896166e7";
 
 function handleButton() {
-  $.getJSON(
-  	dataURL,
-  	function(data) {
-  		handleData(data)
-  	}
-  );
+  $.getJSON(dataURL, handleData);
 }
 
 function handleData(data) {
