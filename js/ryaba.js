@@ -5,15 +5,12 @@ function handleButton() {
 }
 
 function handleData(data) {
-  let text = ""; //data.text.toString();
+  let text = "";
 
   //Собираем текст с разбивкой по строкам
   data.text.forEach(function(item, index) {
     text = text + item + "<br>";
   });
-
-  //Преобразуем в класс, чтобы использововать .replace
-  text = text.toString();
 
   //Подставляем значения в input-ах
   for(let i = 1; i <= 7; i++) {
