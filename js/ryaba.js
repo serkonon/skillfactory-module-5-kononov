@@ -5,8 +5,17 @@ function handleButton() {
 }
 
 function handleData(data) {
-  let text = data.text.toString();
+  let text = ""; //data.text.toString();
 
+  //Собираем текст с разбивкой по строкам
+  data.text.forEach(function(item, index) {
+    text = text + item + "<br>";
+  });
+
+  //Преобразуем в класс, чтобы использововать .replace
+  text = text.toString();
+
+  //Подставляем значения в input-ах
   for(let i = 1; i <= 7; i++) {
   	let var_name = (i == 7) ? "speach" : "var" + i;
   	let var_value = $("#" + var_name)[0].value;
@@ -14,7 +23,9 @@ function handleData(data) {
 
   	text = text.replace(var_holder, var_value);
   }
-  $("#result").text(text);
+
+  //Пишем в поле result
+  $("#result").html(text);
 }
 
 function init() {
